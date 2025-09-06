@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Список смартфонов с графиком</title>
+
+    <style>
+
+        table {
+
+            width: 50%;
+
+            border-collapse: collapse;
+
+            margin: 20px auto;
+
+        }
+
+        th, td {
+
+            border: 1px solid #ddd;
+
+            padding: 8px;
+
+            text-align: center;
+
+        }
+
+        th {
+
+            background-color: #f2f2f2;
+
+        }
+
+        #myChart {
+
+            width: 50%;
+
+            height: 400px;
+
+            margin: 20px auto;
+
+        }
+
+        nav {
+
+            text-align: right;
+
+            margin: 20px;
+
+        }
+
+        nav button {
+
+            margin-left: 10px;
+
+        }
+
+        .phone-gallery {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            margin: 20px;
+
+        }
+
+        .phone-item {
+
+            margin: 10px;
+
+            text-align: center;
+
+        }
+
+        .phone-item img {
+
+            width: 150px;
+
+            height: auto;
+
+        }
+
+        .description {
+
+            text-align: center;
+
+            margin: 20px;
+
+        }
+
+        .reviews {
+
+            margin: 20px;
+
+            text-align: center;
+
+        }
+
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <h2 style="text-align: left;">PARSHUKOVSHOP</h2>
+
+    <nav>
+
+        <button onclick="location.href='login.html'">Войти</button>
+
+        <button onclick="location.href='register.html'">Зарегистрироваться</button>
+
+    </nav>
+
+    
+
+    <div class="description">
+
+        <h3>PARSHUKOV SHOP</h3>
+
+        <p>Мы предлагаем широкий выбор современных смартфонов по конкурентоспособным ценам. Наша цель - предоставить вам лучший опыт покупок, предлагая только качественные товары и отличный сервис.</p>
+
+    </div>
+
+
+    <h2 style="text-align: center;">Список смартфонов и их цены</h2>
+
+    <table>
+
+        <tr>
+
+            <th>Смартфон</th>
+
+            <th>Цена (руб.)</th>
+
+        </tr>
+
+        <tr>
+
+            <td>iPhone 14</td>
+
+            <td>70 000</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Samsung Galaxy S23</td>
+
+            <td>60 000</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Xiaomi 13</td>
+
+            <td>45 000</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Google Pixel 7</td>
+
+            <td>60 000</td>
+
+        </tr>
+
+        <tr>
+
+            <td>OnePlus 11</td>
+
+            <td>55 000</td>
+
+        </tr>
+
+    </table>
+
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const chart = new Chart(ctx, {
+
+            type: 'bar',
+
+            data: {
+
+                labels: ['iPhone 14', 'Samsung Galaxy S23', 'Xiaomi 13', 'Google Pixel 7', 'OnePlus 11'],
+
+                datasets: [{
+
+                    label: 'Цена (руб.)',
+
+                    data: [80000, 70000, 45000, 60000, 55000],
+
+                    backgroundColor: [
+
+                        'rgba(255, 99, 132, 0.2)',
+
+                        'rgba(54, 162, 235, 0.2)',
+
+                        'rgba(255, 206, 86, 0.2)',
+
+                        'rgba(75, 192, 192, 0.2)',
+
+                        'rgba(153, 102, 255, 0.2)'
+
+                    ],
+
+                    borderColor: [
+
+                        'rgba(255, 99, 132, 1)',
+
+                        'rgba(54, 162, 235, 1)',
+
+                        'rgba(255, 206, 86, 1)',
+
+                        'rgba(75, 192, 192, 1)',
+
+                        'rgba(153, 102, 255, 1)'
+
+                    ],
+
+                    borderWidth: 1
+
+                }]
+
+            },
+
+            options: {
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+
+    <div class="qr-code">
+
+        <img src="Снимок экрана 2025-04-26 160954.png" alt="QR КОД" width="250" height="250">
+
+    </div>
+
+
+    <h2 style="text-align: center;">Галерея смартфонов</h2>
+
+    <div class="phone-gallery">
+
+        <div class="phone-item">
+
+            <img src="images.jpg" alt="iPhone 14">
+
+            <p>iPhone 14</p>
+
+        </div>
+
+        <div class="phone-item">
+
+            <img src="samsung-galaxy-s23-ultra-transparent-image-free-png.png" alt="Samsung Galaxy S23">
+
+            <p>Samsung Galaxy S23</p>
+
+        </div>
+
+        <div class="phone-item">
+
+            <img src="images13.jpg" alt="Xiaomi 13">
+
+            <p>Xiaomi 13</p>
+
+        </div>
+
+        <div class="phone-item">
+
+            <img src="cropped_8a9fef9dd5f9d8ca4193a5adec30a86d.png" alt="Google Pixel 7">
+
+            <p>Google Pixel 7</p>
+
+        </div>
+
+        <div class="phone-item">
+
+            <img src="imageoneplus.jpg" alt="OnePlus 11">
+
+            <p>OnePlus 11</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="reviews">
+
+        <h3>Отзывы наших клиентов</h3>
+
+        <p>«Отличный магазин! Купил iPhone 14, и он просто супер!» - Алексей</p>
+
+        <p>«Samsung Galaxy S23 - лучший телефон, который я когда-либо имел!» - Мария</p>
+
+        <p>«Купил Xiaomi 13, и он полностью оправдал мои ожидания!» - Дмитрий</p>
+
+    </div>
+
+
+    <footer style="text-align: center; margin: 20px;">
+
+        <p>&copy; 2023 DilemmaStore. Все права защищены.</p>
+
+    </footer>
+
+</body>
+
+</html>
